@@ -1,0 +1,748 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Pengantar Web Mining &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Tugas';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Profile" href="Profile.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="Profile.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/Profile (1).jpg" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="_static/Profile (1).jpg" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="Profile.html">
+                    Profile
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Pengantar Web Mining</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FTugas.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Tugas.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Pengantar Web Mining</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Pengantar Web Mining</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#definisi">1. Definisi</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tantangan-pemrosesan-data-web">2. Tantangan Pemrosesan Data Web</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#taxonomy-web-mining">3. Taxonomy Web Mining</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#penambangan-isi-web-content-mining">4. Penambangan Isi Web (Content Mining)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#text-mining">5. Text Mining</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#aplikasi-text-mining">6. Aplikasi Text Mining</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-ekstraksi-informasi">A. Ekstraksi Informasi</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#b-topic-modelling">B. Topic Modelling</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#c-peringkasan-dokumen">C. Peringkasan Dokumen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#d-klasifikasi-dokumen">D. Klasifikasi Dokumen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#e-pengelompokan-dokumen">E. Pengelompokan Dokumen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#f-ekstraksi-kata-kunci">F. Ekstraksi Kata Kunci</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#web-usage-mining">7. Web Usage Mining</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#proses-web-usage-mining">8. Proses Web Usage Mining</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-preprocessing-pra-pemrosesan-data">A. Preprocessing (Pra-pemrosesan Data)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#b-pattern-discovery-penemuan-pola">B. Pattern Discovery (Penemuan Pola)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#c-pattern-analysis-analisis-pola">C. Pattern Analysis (Analisis Pola)</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#aplikasi-dari-web-usage-mining">9. Aplikasi dari Web Usage Mining</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#penambangan-struktur-web-web-structure-mining">10. Penambangan Struktur Web (Web Structure Mining)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#aplikasi-web-structure-mining">11. Aplikasi Web Structure Mining</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#proses-web-mining">Proses Web Mining</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-pengumpulan-data-web">A. Pengumpulan data Web</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#b-eksplorasi-data">B. Eksplorasi Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#c-mentransformasi-data-ke-dalam-representasi-data-yang-sesuai-dengan-metode-data-mining">C. Mentransformasi data ke dalam representasi data yang sesuai dengan metode data mining</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#d-pemrosesan-data-butuh-waktu-70-80-dari-proyek-data-mining">D. Pemrosesan data butuh waktu  70-80% dari proyek data mining</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#e-mempersiapkan-data-dengan-baik-akan-menghasilkan-model-yang-layak-dan-valid">E. Mempersiapkan data dengan baik akan menghasilkan model yang layak dan valid</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#daftar-pustaka">Daftar Pustaka</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#bukti-turnitin">Bukti Turnitin</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="pengantar-web-mining">
+<h1>Pengantar Web Mining<a class="headerlink" href="#pengantar-web-mining" title="Link to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="definisi">
+<h1>1. Definisi<a class="headerlink" href="#definisi" title="Link to this heading">#</a></h1>
+<p>Web merupakan kumpulan informasi dan data yang menawarkan kesempatan besar untuk dijelajahi demi menciptakan wawasan yang bermanfaat bagi masyarakat dan entitas tertentu. Informasi dan data yang ada di internet memiliki karakteristik yang berbeda dibandingkan dengan data yang disimpan secara konvensional. Luasnya web menyebabkannyamembuat metode penyimpanan data dan penambangan data tradisional menjadi kurang efektif. Jumlah data yang ada di web bisa menjangkau ribuan terabyte dan terus mengalami peningkatan. Sekarang ini, banyak perusahaan serta organisasi yang mempublikasikan berbagai informasi tentang bisnis mereka di situs web. Dengan ukuran yang sangat besar tersebut, menciptakan data warehouse untuk menyimpan semua data dan informasi ini menjadi tantangan yang signifikan. Kompleksitas dari halaman-halaman web jauh lebih tinggi jika dibandingkan dengan dokumen teks standar. Halaman web memiliki banyak struktur yang berbeda-beda. Selain itu, dari sudut pandang konten yang disajikan, halaman web menawarkan beragam bahasa, gaya penulisan, struktur, dan tampilan. Penambangan web adalah proses untuk menemukan pola-pola penting dan bermanfaat yang secara tidak langsung tersimpan dalam kumpulan data besar di layanan internet.(Suratno, Prahasto, and Rochim 2014).</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="tantangan-pemrosesan-data-web">
+<h1>2. Tantangan Pemrosesan Data Web<a class="headerlink" href="#tantangan-pemrosesan-data-web" title="Link to this heading">#</a></h1>
+<p>Pemrosesan data web dan big data di zaman kini berhadapan dengan tantangan yang sangat rumit dan berlapis. Dari perspektif teknis, perusahaan perlu menangani volume data yang sangat besar, bahkan mencapai petabyte, yang tak mampu dikelola oleh sistem konvensional, sambil memenuhi permintaan pemrosesan secara real-time untuk informasi dari sensor IoT, platform media sosial, dan transaksi daring. Di samping itu, keberagaman jenis data, mulai dari format terstruktur hingga semi-terstruktur seperti XML dan JSON, serta data tidak terstruktur yang meliputi gambar, video, dan teks yang tidak terorganisir, memperumit pengelolaan informasi. Isu keamanan juga menjadi fokus utama, karena penyebaran data di berbagai tempat meningkatkan kemungkinan kebocoran dan serangan siber, yang memerlukan penggunaan sistem enkripsi, autentikasi, dan pengawasan akses yang ketat. Dari perspektif operasional, penggabungan informasi dari berbagai sumber sering kali menghadirkan tantangan mengenai konsistensi antar sistem, sedangkan lemahnya ketersediaan sumber daya manusia yang terampil dalam teknologi big data seperti NoSQL dan Apache Hadoop menjadi suatu kendala tersendiri. Dalam hal ekonomi, pengelolaan big data menuntut investasi yang signifikan untuk infrastruktur, pemeliharaan sistem yang rumit, dan pengeluaran untuk pelatihan tenaga kerja. Oleh karena itu, keberhasilan pengelolaan database di era big data tidak hanya bergantung pada penggunaan teknologi mutakhir, tetapi juga memerlukan pendekatan menyeluruh yang mencakup investasi pada infrastruktur yang dapat ditingkatkan, pengembangan kapasitas tenaga kerja yang berkualitas, penerapan pedoman keamanan yang menyeluruh, serta kerjasama strategis antara berbagai pemangku kepentingan untuk membangun ekosistem manajemen data yang efisien dan berkelanjutan(Asmita 2025).</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="taxonomy-web-mining">
+<h1>3. Taxonomy Web Mining<a class="headerlink" href="#taxonomy-web-mining" title="Link to this heading">#</a></h1>
+<div align="center">
+<p><img alt="Taxonomy" src="_images/taxonomy.png" /></p>
+</div>
+<p>Dari gambar tersebut menggambarkan taksonomi Web Mining, yang merupakan pengklasifikasian dari web mining menjadi tiga kategori utama. Pertama adalah Web Content Mining, yang menekankan pada konten atau isi dari halaman web, meliputi teks, gambar, audio, video, dan data yang terstruktur seperti tabel atau metadata. Kedua, Web Structure Mining, yang berkaitan dengan struktur atau relasi di antara halaman-halaman web. Di bagian ini, terdapat analisis hyperlink yang dibagi menjadi intra-document hyperlink (hubungan dalam dokumen yang sama) dan inter-document hyperlink (hubungan antar dokumen yang berbeda), serta analisis struktur dokumen untuk memahami desain dan penggunaan tag HTML atau XML. Ketiga, Web Usage Mining, yang menggunakan data interaksi pengguna dengan situs web, termasuk data dari log server web, log server aplikasi, hingga log tingkat aplikasi untuk mengidentifikasi pola perilaku pengguna. Oleh karena itu, taksonomi ini memberikan pemahaman bahwa web mining bukan hanya sekadar fokus pada konten, tetapi juga mencakup struktur hubungan antara halaman dan perilaku pengguna dalam berinteraksi dengan web(Kumar 2015).</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="penambangan-isi-web-content-mining">
+<h1>4. Penambangan Isi Web (Content Mining)<a class="headerlink" href="#penambangan-isi-web-content-mining" title="Link to this heading">#</a></h1>
+<p>Web Content Mining adalah salah satu dari tiga jenis teknik dalam Web Mining yang berfokus pada proses penambangan, ekstraksi, serta integrasi data, informasi, dan pengetahuan yang berguna dari konten halaman web. Teknik ini bertujuan untuk menemukan informasi yang relevan dari berbagai jenis data di web, seperti teks, gambar, audio, video, maupun struktur dokumen. Berbeda dengan data mining yang umumnya menangani data terstruktur, Web Content Mining lebih banyak berhadapan dengan data semi-terstruktur atau tidak terstruktur, sehingga proses penemuan pola pengetahuan baru sering kali menjadi tantangan. Dalam praktiknya, Web Content Mining melakukan pemindaian terhadap konten dan mengelompokkan halaman web sesuai isi yang dimasukkan pengguna, seperti pada mesin pencari yang menampilkan saran relevan ketika seseorang mencari sebuah lagu. Dengan demikian, Web Content Mining berperan penting dalam mengolah keragaman data web untuk menghasilkan informasi yang bermanfaat bagi pengguna.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="text-mining">
+<h1>5. Text Mining<a class="headerlink" href="#text-mining" title="Link to this heading">#</a></h1>
+<p>Penggalian teks merupakan kegiatan untuk mengambil informasi yang berharga dari sekumpulan teks yang tidak teratur dengan memanfaatkan teknik dari penambangan data dan pemrosesan bahasa alami (NLP). Sasaran utama dari penggalian teks adalah menemukan pola-pola, koneksi, atau wawasan baru yang terpendam dalam dokumen untuk membantu proses pengambilan keputusan, analisis data, dan penemuan pengetahuan. Dengan demikian, penggalian teks menjadikan informasi yang sebelumnya sulit diakses atau terpendam dalam teks besar menjadi lebih mudah untuk dipahami dan digunakan.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="aplikasi-text-mining">
+<h1>6. Aplikasi Text Mining<a class="headerlink" href="#aplikasi-text-mining" title="Link to this heading">#</a></h1>
+<section id="a-ekstraksi-informasi">
+<h2>A. Ekstraksi Informasi<a class="headerlink" href="#a-ekstraksi-informasi" title="Link to this heading">#</a></h2>
+<p>Ekstraksi data merupakan langkah dalam ranah Pemrosesan Bahasa Alami (NLP) yang bertujuan untuk mengubah teks yang tidak terstruktur menjadi informasi yang teratur dengan cara mengambil fakta-fakta utama, seperti entitas, kejadian, dan keterkaitan di antara entitas. Metode ini memungkinkan pemrosesan informasi dari teks yang bebas, seperti berita atau situs web, sehingga dapat diolah menjadi pengetahuan yang lebih sistematis untuk disimpan dalam database dan digunakan untuk analisis yang lebih mendalam(Susanti and Mustofa 2015).</p>
+</section>
+<section id="b-topic-modelling">
+<h2>B. Topic Modelling<a class="headerlink" href="#b-topic-modelling" title="Link to this heading">#</a></h2>
+<p>Modeling topik merupakan suatu pendekatan dalam penggalian teks yang ditujukan untuk mengenali serta mengambil hubungan antar istilah dalam sekumpulan artikel sehingga dapat secara otomatis menghasilkan tema tertentu. Pendekatan ini umumnya digunakan untuk menganalisis isu-isu atau tema yang sedang tren dalam suatu kumpulan teks, contohnya dalam sektor kesehatan, pendidikan, atau riset. Dengan memanfaatkan algoritma seperti Latent Dirichlet Allocation (LDA) atau Non-negative Matrix Factorization (NMF), modeling topik dapat mendeteksi pola yang tidak terlihat dalam data teks yang besar dan tidak terorganisir. Penelitian tentang modeling topik dengan berbagai kumpulan bahasa telah banyak dilakukan oleh para akademisi, karena teknik ini berfungsi untuk merangkum, mengelompokkan, serta mengakses wawasan dari sekumpulan dokumen dengan cara yang lebih efisien dan teratur(Novarian, Khomsah, and Arifa 2023).</p>
+</section>
+<section id="c-peringkasan-dokumen">
+<h2>C. Peringkasan Dokumen<a class="headerlink" href="#c-peringkasan-dokumen" title="Link to this heading">#</a></h2>
+<p>Peringkasan dokumen merupakan langkah untuk mengubah teks yang panjang menjadi versi yang lebih singkat sambil tetap menjaga informasi utama yang terdapat di dalamnya. Tujuan dari kegiatan ini adalah untuk memudahkan individu memahami isi dokumen dengan cepat tanpa perlu membaca keseluruhan teks yang semakin melimpah seiring dengan kemajuan teknologi dan internet. Dengan melakukan peringkasan, elemen-elemen penting dari suatu artikel atau dokumen bisa diangkat sehingga informasi pokok dapat diakses, dipahami, dan dimanfaatkan untuk analisis atau pengambilan keputusan dengan cara yang lebih efisien(Maharani and Sanjaya 2013).</p>
+</section>
+<section id="d-klasifikasi-dokumen">
+<h2>D. Klasifikasi Dokumen<a class="headerlink" href="#d-klasifikasi-dokumen" title="Link to this heading">#</a></h2>
+<p>Klasifikasi dokumen merupakan suatu langkah untuk mengenali dan mengelompokkan dokumen ke dalam kategori tertentu sesuai dengan kriteria yang sudah ditentukan, seperti jenis dokumen, tema, waktu, atau karakteristik lainnya. Sasaran dari klasifikasi ini adalah untuk memudahkan pengelolaan, penyimpanan, dan pencarian dokumen sehingga setiap dokumen dapat dikelompokkan pada kategori yang sesuai, diatur dengan cara yang sistematis, dan lebih mudah diakses ketika diperlukan(Dewi 2024).</p>
+</section>
+<section id="e-pengelompokan-dokumen">
+<h2>E. Pengelompokan Dokumen<a class="headerlink" href="#e-pengelompokan-dokumen" title="Link to this heading">#</a></h2>
+<p>Pengelompokan dokumen merupakan teknik dalam penambangan teks yang bertujuan untuk menyusun koleksi dokumen teks ke dalam kategori-kategori berdasarkan persamaan isi atau tema yang ada di dalamnya. Dengan melakukan pengelompokan, dokumen-dokumen yang memiliki karakteristik atau data yang serupa dapat dikelompokkan dalam satu kluster, sehingga memudahkan dalam pencarian, analisis, dan penggunaan informasi dengan cara yang lebih efisien. Teknik ini sangat krusial karena jumlah data teks yang terus berkembang dengan pesat dan beragam, sehingga tanpa adanya pengelompokan, pengguna akan kesulitan dalam menemukan informasi yang relevan(Hayati, Ludviani, and Rosyadi 2015).</p>
+</section>
+<section id="f-ekstraksi-kata-kunci">
+<h2>F. Ekstraksi Kata Kunci<a class="headerlink" href="#f-ekstraksi-kata-kunci" title="Link to this heading">#</a></h2>
+<p>Ekstraksi kata kunci merupakan langkah untuk memperoleh sekumpulan kata atau frasa singkat yang mencerminkan inti dari sebuah tulisan. Sasaran dari proses ini adalah untuk mengidentifikasi istilah-istilah penting yang paling berhubungan dengan materi dokumen, sehingga mendukung pengindeksan, pencarian data, dan sistem rekomendasi. (Nugroho 2019).</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="web-usage-mining">
+<h1>7. Web Usage Mining<a class="headerlink" href="#web-usage-mining" title="Link to this heading">#</a></h1>
+<p>Web Usage Mining adalah salah satu aspek dari web mining yang mengutamakan penggalian pola perilaku pengguna berdasarkan data jejak aktivitas mereka saat berinteraksi dengan situs web. Sumber data yang digunakan umumnya diperoleh dari catatan server, proxy server, atau browser, yang mencakup rincian mengenai halaman yang dikunjungi, urutan akses, waktu kunjungan, dan durasi interaksi di setiap halaman. Melalui analisis informasi tersebut, Web Usage Mining dapat menawarkan wawasan tentang keinginan dan preferensi pengguna yang kemudian dimanfaatkan untuk berbagai keperluan, seperti penyesuaian konten, peningkatan kualitas layanan, perbaikan desain situs web, pengembangan sistem rekomendasi, hingga perencanaan strategi pemasaran digital. Dengan demikian, Web Usage Mining memiliki peran yang signifikan dalam membantu pengelola situs web memahami perilaku pengguna secara lebih mendalam sehingga pengalaman pengguna dapat dioptimalkan dan tujuan bisnis dapat dicapai.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="proses-web-usage-mining">
+<h1>8. Proses Web Usage Mining<a class="headerlink" href="#proses-web-usage-mining" title="Link to this heading">#</a></h1>
+<div align="center">
+<p><img alt="Proses" src="_images/proses.png" /></p>
+</div>
+<section id="a-preprocessing-pra-pemrosesan-data">
+<h2>A. Preprocessing (Pra-pemrosesan Data)<a class="headerlink" href="#a-preprocessing-pra-pemrosesan-data" title="Link to this heading">#</a></h2>
+<p>Tahap awal dari Penambangan Penggunaan Web adalah preprocessing, yang merujuk pada proses pengolahan awal terhadap data mentah yang diambil dari log web, baik berasal dari server, proxy, maupun browser. Log web sering kali berukuran besar, tidak terstruktur, dan mengandung banyak gangguan seperti kunjungan dari bot, permintaan file gambar, atau data duplikat yang tidak relevan untuk analisis. Oleh sebab itu, tahap ini bertujuan untuk membersihkan data, menyaring informasi yang penting, dan melakukan transformasi sehingga data dapat digunakan pada tahap berikutnya. Proses preprocessing sangat krusial karena kualitas data yang diterima akan sangat memengaruhi mutu pola yang dihasilkan.</p>
+</section>
+<section id="b-pattern-discovery-penemuan-pola">
+<h2>B. Pattern Discovery (Penemuan Pola)<a class="headerlink" href="#b-pattern-discovery-penemuan-pola" title="Link to this heading">#</a></h2>
+<p>Setelah data dipersiapkan, langkah selanjutnya adalah penemuan pola, yaitu proses untuk menemukan pola atau informasi yang tidak terlihat dari data yang telah diproses. Berbagai metode penambangan data dapat diterapkan pada langkah ini, seperti penambangan aturan asosiasi untuk mengidentifikasi hubungan antara halaman atau perilaku pengguna, pengelompokan untuk mengatur pengguna dengan akses yang mirip, klasifikasi untuk mengidentifikasi pengguna ke dalam kategori tertentu, serta penambangan pola urutan untuk menemukan rangkaian kunjungan halaman yang sering terjadi. Proses ini menghasilkan pola perilaku pengguna yang dapat memberikan wawasan berharga tentang interaksi mereka dengan situs web.</p>
+</section>
+<section id="c-pattern-analysis-analisis-pola">
+<h2>C. Pattern Analysis (Analisis Pola)<a class="headerlink" href="#c-pattern-analysis-analisis-pola" title="Link to this heading">#</a></h2>
+<p>Tahap akhir adalah analisis pola, yang merupakan langkah untuk mengevaluasi dan menganalisis pola yang telah ditemukan demi memastikan bahwa pola tersebut benar-benar bermanfaat dan berhubungan dengan tujuan dari analisis. Proses analisis bisa dilakukan dengan menggunakan query, OLAP, metode statistik, atau visualisasi data untuk memudahkan pemahaman mengenai pola yang ada. Output dari tahap ini sering kali dimanfaatkan dalam berbagai bidang, seperti kustomisasi konten situs web, pengembangan sistem rekomendasi, perbaikan desain situs web, sampai penyusunan strategi pemasaran digital. Dengan melakukan analisis yang tepat, hasil dari Web Usage Mining dapat memberikan kontribusi yang berarti bagi pengelola situs web serta penggunanya.</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="aplikasi-dari-web-usage-mining">
+<h1>9. Aplikasi dari Web Usage Mining<a class="headerlink" href="#aplikasi-dari-web-usage-mining" title="Link to this heading">#</a></h1>
+<ol class="arabic simple">
+<li><p>Product Recommendations, Rekomendasi produk merupakan sebuah sistem yang secara otomatis memberikan saran mengenai produk kepada pengguna situs web berdasarkan data perilaku mereka, termasuk riwayat pembelian, halaman yang diakses, serta popularitas produk. (Kovalenko 2025).</p></li>
+<li><p>Personalized Search , Personalized Search adalah suatu cara mencari informasi di mana hasil yang muncul bervariasi untuk setiap individu, disesuaikan dengan preferensi pribadi, catatan pencarian sebelumnya, lokasi geografis, atau pola interaksi mereka di dunia maya(Riko 2024).</p></li>
+</ol>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="penambangan-struktur-web-web-structure-mining">
+<h1>10. Penambangan Struktur Web (Web Structure Mining)<a class="headerlink" href="#penambangan-struktur-web-web-structure-mining" title="Link to this heading">#</a></h1>
+<p>Web Structure Mining merupakan salah satu bagian dari web mining yang berkonsentrasi pada pengkajian keterhubungan antar halaman web dengan memanfaatkan konsep graf. Dalam metode ini, halaman web diperlakukan sebagai node, sedangkan tautan antara halaman dianggap sebagai edge, sehingga membentuk graf web. Pengkajian ini dilakukan untuk mengidentifikasi pola keterkaitan, baik di antara halaman (inter-page) maupun struktur dalam halaman (intra-page) seperti penggunaan tag HTML/XML. Dengan metode ini, halaman-halaman yang memiliki peranan penting atau berpengaruh dapat dikenali, misalnya melalui penerapan algoritma PageRank dan HITS, yang selanjutnya digunakan untuk meningkatkan kualitas penelusuran dan pengelolaan data(GeeksforGeeks 2024).</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="aplikasi-web-structure-mining">
+<h1>11. Aplikasi Web Structure Mining<a class="headerlink" href="#aplikasi-web-structure-mining" title="Link to this heading">#</a></h1>
+<ol class="arabic simple">
+<li><p>Google Search dengan PageRank menggunakan graph mining untuk menganalisis struktur link antar website. Algoritma ini menghitung “otoritas” sebuah halaman berdasarkan jumlah dan kualitas link yang menuju ke halaman tersebut. Semakin banyak website berkualitas yang menlink ke suatu halaman, semakin tinggi ranking-nya dalam hasil pencarian.</p></li>
+<li><p>Twitter/Instagram untuk deteksi influencer menggunakan network analysis untuk mengidentifikasi node-node penting dalam graf sosial. Mereka menganalisis follower count, engagement rate, dan betweenness centrality untuk menentukan siapa yang memiliki pengaruh besar dalam menyebarkan informasi. Platform ini juga menggunakan community detection algorithms untuk menemukan cluster users dengan minat serupa.</p></li>
+<li><p>Analisis Jaringan Sosial untuk deteksi misinformasi menggunakan graph mining untuk melacak bagaimana informasi menyebar melalui jaringan. Algoritma dapat mengidentifikasi “super spreaders” atau akun yang sering menyebarkan konten viral, serta mendeteksi pola penyebaran yang mencurigakan seperti koordinated inauthentic behavior.</p></li>
+</ol>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="proses-web-mining">
+<h1>Proses Web Mining<a class="headerlink" href="#proses-web-mining" title="Link to this heading">#</a></h1>
+<div align="center">
+<p><img alt="Proses Web" src="_images/ProsesWeb.png" /></p>
+</div>
+<section id="a-pengumpulan-data-web">
+<h2>A. Pengumpulan data Web<a class="headerlink" href="#a-pengumpulan-data-web" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Web Crawling : dimana mengambil dokumen atau halaman web secara otomatis</p></li>
+<li><p>Web API : dimana mengambi data dari layanan atau platform yang menyediakan api</p></li>
+</ol>
+</section>
+<section id="b-eksplorasi-data">
+<h2>B. Eksplorasi Data<a class="headerlink" href="#b-eksplorasi-data" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Meneliti struktur dan isi data web.</p></li>
+<li><p>Melakukan ringkasan statistik untuk memahami distribusi, missing values, atau outlier.</p></li>
+<li><p>Membuat visualisasi untuk mempermudah interpretasi.</p></li>
+</ol>
+</section>
+<section id="c-mentransformasi-data-ke-dalam-representasi-data-yang-sesuai-dengan-metode-data-mining">
+<h2>C. Mentransformasi data ke dalam representasi data yang sesuai dengan metode data mining<a class="headerlink" href="#c-mentransformasi-data-ke-dalam-representasi-data-yang-sesuai-dengan-metode-data-mining" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Transformasi data: Mengubah data ke format yang sesuai untuk metode data mining.</p></li>
+<li><p>Diskretisasi dan binarisasi: Mengubah data kontinu menjadi kategori atau format biner jika diperlukan.</p></li>
+<li><p>Transformasi teks atau atribut menjadi vektor/embedding.</p></li>
+<li><p>Reduksi dimensi dan seleksi fitur: Mengurangi jumlah fitur untuk mengurangi kompleksitas model.</p></li>
+<li><p>Integrasi berbagai sumber data jika data berasal dari banyak sumber.</p></li>
+</ol>
+</section>
+<section id="d-pemrosesan-data-butuh-waktu-70-80-dari-proyek-data-mining">
+<h2>D. Pemrosesan data butuh waktu  70-80% dari proyek data mining<a class="headerlink" href="#d-pemrosesan-data-butuh-waktu-70-80-dari-proyek-data-mining" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Menggunakan metode data mining untuk membangun model atau menemukan pola.</p></li>
+<li><p>Melakukan evaluasi model untuk menilai kualitas prediksi atau pola yang ditemukan.</p></li>
+</ol>
+</section>
+<section id="e-mempersiapkan-data-dengan-baik-akan-menghasilkan-model-yang-layak-dan-valid">
+<h2>E. Mempersiapkan data dengan baik akan menghasilkan model yang layak dan valid<a class="headerlink" href="#e-mempersiapkan-data-dengan-baik-akan-menghasilkan-model-yang-layak-dan-valid" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Menguji model dengan hyperparameter berbeda.</p></li>
+<li><p>Mencoba beberapa metode data mining lain.</p></li>
+<li><p>Memperbaiki praproses data atau pembangkitan fitur.</p></li>
+<li><p>Meningkatkan jumlah dan kualitas data pelatihan.</p></li>
+</ol>
+</section>
+</section>
+<hr class="docutils" />
+<section class="tex2jax_ignore mathjax_ignore" id="daftar-pustaka">
+<h1>Daftar Pustaka<a class="headerlink" href="#daftar-pustaka" title="Link to this heading">#</a></h1>
+<ol class="arabic simple">
+<li><p>Asmita, Andhini. 2025. “Manajemen Database Di Era Big Data: Teknologi Dan Tantangan.” <em>Jurnal Sains Student Research</em> 3(3):318–27.</p></li>
+<li><p>Dewi, Pamela Anisa. 2024. “Apa Itu Klasifikasi Dokumen Dan Pentingnya Untuk Bisnis.” <a class="reference external" href="https://mekari.com/blog/apa-itu-klasifikasi-dokumen/">https://mekari.com/blog/apa-itu-klasifikasi-dokumen/</a>.</p></li>
+<li><p>GeeksforGeeks. 2024. “Web Structure Mining.” <a class="reference external" href="https://www.geeksforgeeks.org/data-science/web-structure-mining/">https://www.geeksforgeeks.org/data-science/web-structure-mining/</a>.</p></li>
+<li><p>Hayati, Khadijah F., Resti Ludviani, and Arini R. Rosyadi. 2015. “Pengelompokan Dokumen Menggunakan Dokumen Berlabel Dan Tidak Berlabel Dengan Pendekatan Modified Heuristic Fuzzy Co-Clustering.” <em>Jurnal Buana Informatika</em> 6(2):103–12. doi:10.24002/jbi.v6i2.409.</p></li>
+<li><p>Kovalenko, Oleksii. 2025. “What Are Product Recommendations? Types &amp; Strategies.” <a class="reference external" href="https://wisepops.com/blog/product-recommendations">https://wisepops.com/blog/product-recommendations</a>.</p></li>
+<li><p>Kumar, Shyam Nandan. 2015. “World towards Advance Web Mining: A Review.” <em>American Journal of Systems and Software</em> 3(2):44–61. doi:10.12691/ajss-3-2-3.</p></li>
+<li><p>Maharani, Herastia, and Monica Sanjaya. 2013. “Peringkasan Dokumen Dengan Metode Non-Negative Matrix Factorization.” <em>Jurnal Telematika</em> 8(2):4. doi:10.61769/telematika.v8i2.71.</p></li>
+<li><p>Novarian, Nathanael, Siti Khomsah, and Amalia Beladinna Arifa. 2023. “Topic Modeling Tugas Akhir Mahasiswa Fakultas Informatika Institut Teknologi Telkom Purwokerto Menggunakan Metode Latent Dirichlet Allocation.” <em>LEDGER: Journal Informatic and Information Technology</em> 2(1):14–27.</p></li>
+<li><p>Nugroho, Fajar. 2019. “Ekstraksi Kata Kunci Otomatis Pada Website Menggunakan Semantic Relatedness Dan Artificial Neural Network.” Universitas Komputer Indonesia.</p></li>
+<li><p>Riko, Dinda. 2024. “Apa Itu Personalized Search: Cara Kerja, Fungsi + 4 Hal Terbaru.” <a class="reference external" href="https://www.garuda.website/blog/apa-itu-personalized-search/">https://www.garuda.website/blog/apa-itu-personalized-search/</a>.</p></li>
+<li><p>Suratno, Tri, Toni Prahasto, and Adian Fatchur Rochim. 2014. “Web Usage Mining, Pattern Discovery Dan Log File.” <em>Jurnal Sistem Informasi Bisnis</em> 1(2):94–99. doi:10.21456/vol1iss2pp93-98.</p></li>
+<li><p>Susanti, Erma, and Khabib Mustofa. 2015. “Ekstraksi Informasi Halaman Web Menggunakan Pendekatan Bootstrapping Pada Ontology-Based Information Extraction.” <em>IJCCS (Indonesian Journal of Computing and Cybernetics Systems)</em> 9(2):111. doi:10.22146/ijccs.7540.</p></li>
+</ol>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="bukti-turnitin">
+<h1>Bukti Turnitin<a class="headerlink" href="#bukti-turnitin" title="Link to this heading">#</a></h1>
+<p><img alt="Ini Bukti Turnitin" src="_images/turnitin.png" /></p>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Profile.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Profile</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Pengantar Web Mining</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#definisi">1. Definisi</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tantangan-pemrosesan-data-web">2. Tantangan Pemrosesan Data Web</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#taxonomy-web-mining">3. Taxonomy Web Mining</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#penambangan-isi-web-content-mining">4. Penambangan Isi Web (Content Mining)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#text-mining">5. Text Mining</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#aplikasi-text-mining">6. Aplikasi Text Mining</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-ekstraksi-informasi">A. Ekstraksi Informasi</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#b-topic-modelling">B. Topic Modelling</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#c-peringkasan-dokumen">C. Peringkasan Dokumen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#d-klasifikasi-dokumen">D. Klasifikasi Dokumen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#e-pengelompokan-dokumen">E. Pengelompokan Dokumen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#f-ekstraksi-kata-kunci">F. Ekstraksi Kata Kunci</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#web-usage-mining">7. Web Usage Mining</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#proses-web-usage-mining">8. Proses Web Usage Mining</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-preprocessing-pra-pemrosesan-data">A. Preprocessing (Pra-pemrosesan Data)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#b-pattern-discovery-penemuan-pola">B. Pattern Discovery (Penemuan Pola)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#c-pattern-analysis-analisis-pola">C. Pattern Analysis (Analisis Pola)</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#aplikasi-dari-web-usage-mining">9. Aplikasi dari Web Usage Mining</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#penambangan-struktur-web-web-structure-mining">10. Penambangan Struktur Web (Web Structure Mining)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#aplikasi-web-structure-mining">11. Aplikasi Web Structure Mining</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#proses-web-mining">Proses Web Mining</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-pengumpulan-data-web">A. Pengumpulan data Web</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#b-eksplorasi-data">B. Eksplorasi Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#c-mentransformasi-data-ke-dalam-representasi-data-yang-sesuai-dengan-metode-data-mining">C. Mentransformasi data ke dalam representasi data yang sesuai dengan metode data mining</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#d-pemrosesan-data-butuh-waktu-70-80-dari-proyek-data-mining">D. Pemrosesan data butuh waktu  70-80% dari proyek data mining</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#e-mempersiapkan-data-dengan-baik-akan-menghasilkan-model-yang-layak-dan-valid">E. Mempersiapkan data dengan baik akan menghasilkan model yang layak dan valid</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#daftar-pustaka">Daftar Pustaka</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#bukti-turnitin">Bukti Turnitin</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
