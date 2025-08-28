@@ -6,7 +6,7 @@ Proses untuk Crawling data yaitu,
 
 Untuk memasang library Python resmi Springer Nature, jalankan:
 
-```{code}
+```{bash}
 !pip install sprynger
 ```
 
