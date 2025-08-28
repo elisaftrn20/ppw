@@ -128,6 +128,5 @@ Web Structure Mining merupakan salah satu bagian dari web mining yang berkonsent
 
 12. Susanti, Erma, and Khabib Mustofa. 2015. “Ekstraksi Informasi Halaman Web Menggunakan Pendekatan Bootstrapping Pada Ontology-Based Information Extraction.” *IJCCS (Indonesian Journal of Computing and Cybernetics Systems)* 9(2):111. doi:10.22146/ijccs.7540.  
 
-
 # Bukti Turnitin
 ![Ini Bukti Turnitin](turnitin.png)
