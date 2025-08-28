@@ -9,6 +9,15 @@ Untuk memasang library Python resmi Springer Nature, jalankan:
 ```bash
 !pip install sprynger
 ```
+Requirement already satisfied: sprynger in /usr/local/lib/python3.12/dist-packages (0.4.1)
+Requirement already satisfied: lxml in /usr/local/lib/python3.12/dist-packages (from sprynger) (5.4.0)
+Requirement already satisfied: requests in /usr/local/lib/python3.12/dist-packages (from sprynger) (2.32.4)
+Requirement already satisfied: urllib3 in /usr/local/lib/python3.12/dist-packages (from sprynger) (2.5.0)
+Requirement already satisfied: platformdirs in /usr/local/lib/python3.12/dist-packages (from sprynger) (4.3.8)
+Requirement already satisfied: charset_normalizer<4,>=2 in /usr/local/lib/python3.12/dist-packages (from requests->sprynger) (3.4.3)
+Requirement already satisfied: idna<4,>=2.5 in /usr/local/lib/python3.12/dist-packages (from requests->sprynger) (3.10)
+Requirement already satisfied: certifi>=2017.4.17 in /usr/local/lib/python3.12/dist-packages (from requests->sprynger) (2025.8.3)
+
 
 ## 2. Menyiapkan API Key
 Setiap pencarian membutuhkan API Key dari Springer Nature agar kita diizinkan mengambil data.
