@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>1. Import Library &#8212; My sample book</title>
+    <title>Pagerank WebGoogle10K &#8212; My sample book</title>
   
   
   
@@ -60,7 +60,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'WebGoogle10K_PageRank';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="1. Import Library" href="LinkDalamPage_PageRank.html" />
+    <link rel="next" title="Pagerank Website ITS" href="LinkDalamPage_PageRank.html" />
     <link rel="prev" title="UTS - CLUSTERING EMAIL" href="UTS_EMAIL.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -197,7 +197,7 @@
 
 <li class="toctree-l1"><a class="reference internal" href="Crawling.html">Crawling Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="CrawlingPTA.html">Crawling Web PTA Trunojoyo</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Berita.html">Tugas Crawling Website Berita (Sumber dari CNN Indonesia)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Berita.html">Crawling Website Berita</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Crawling_Website_Trunojoyo.html">Crawling Website Trunojoyo</a></li>
 <li class="toctree-l1"><a class="reference internal" href="PTA_Preprocessing.html">Pre-processing Web PTA</a></li>
 
@@ -280,7 +280,7 @@
 
 
 
-<li class="toctree-l1 current active"><a class="current reference internal" href="#"><strong>1. Import Library</strong></a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><strong>Pagerank WebGoogle10K</strong></a></li>
 
 
 
@@ -290,7 +290,9 @@
 
 
 
-<li class="toctree-l1"><a class="reference internal" href="LinkDalamPage_PageRank.html"><strong>1. Import Library</strong></a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="LinkDalamPage_PageRank.html"><strong>Pagerank Website ITS</strong></a></li>
+
 
 
 
@@ -490,7 +492,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>1. Import Library</h1>
+    <h1>Pagerank WebGoogle10K</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -500,8 +502,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><strong>1. Import Library</strong></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#load-data"><strong>2. Load Data</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><strong>Pagerank WebGoogle10K</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#import-library"><strong>1. Import Library</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#load-dataset"><strong>2. Load Dataset</strong></a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#membangun-graph-menggunakan-networkx"><strong>3. Membangun Graph Menggunakan NetworkX</strong></a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#membentuk-matriks-adjacency-a"><strong>4. Membentuk Matriks Adjacency (A)</strong></a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#membentuk-matriks-probabilitas-transisi-baris-stokastik-p"><strong>5. Membentuk Matriks Probabilitas Transisi Baris-Stokastik (P)</strong></a></li>
@@ -530,7 +533,12 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <div class="cell docutils container">
+  <section class="tex2jax_ignore mathjax_ignore" id="pagerank-webgoogle10k">
+<h1><strong>Pagerank WebGoogle10K</strong><a class="headerlink" href="#pagerank-webgoogle10k" title="Link to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="import-library">
+<h1><strong>1. Import Library</strong><a class="headerlink" href="#import-library" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
@@ -541,8 +549,9 @@ document.write(`
 </div>
 </div>
 </div>
-<section class="tex2jax_ignore mathjax_ignore" id="import-library">
-<h1><strong>1. Import Library</strong><a class="headerlink" href="#import-library" title="Link to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="load-dataset">
+<h1><strong>2. Load Dataset</strong><a class="headerlink" href="#load-dataset" title="Link to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dataset</span> <span class="o">=</span> <span class="s1">&#39;/content/drive/MyDrive/Tugas6PPW/web-Google_10k.txt&#39;</span>
@@ -550,9 +559,6 @@ document.write(`
 </div>
 </div>
 </div>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="load-data">
-<h1><strong>2. Load Data</strong><a class="headerlink" href="#load-data" title="Link to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_node</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span>
@@ -6209,7 +6215,7 @@ Daftar Node yang Terhubung dengan Node 486980 (Incoming dan Outgoing):
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><strong>1. Import Library</strong></p>
+        <p class="prev-next-title"><strong>Pagerank Website ITS</strong></p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -6229,8 +6235,9 @@ Daftar Node yang Terhubung dengan Node 486980 (Incoming dan Outgoing):
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><strong>1. Import Library</strong></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#load-data"><strong>2. Load Data</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><strong>Pagerank WebGoogle10K</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#import-library"><strong>1. Import Library</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#load-dataset"><strong>2. Load Dataset</strong></a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#membangun-graph-menggunakan-networkx"><strong>3. Membangun Graph Menggunakan NetworkX</strong></a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#membentuk-matriks-adjacency-a"><strong>4. Membentuk Matriks Adjacency (A)</strong></a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#membentuk-matriks-probabilitas-transisi-baris-stokastik-p"><strong>5. Membentuk Matriks Probabilitas Transisi Baris-Stokastik (P)</strong></a></li>
